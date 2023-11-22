@@ -1,5 +1,6 @@
 from PIL import Image
 import imagehash
+import hashlib
 
 class ImageFile:
     """
@@ -7,6 +8,7 @@ class ImageFile:
     """
     def __init__(self, file_path, hash_size=20):
         self.file_path = file_path
+        self._average_hash = None  # Private attribute to store the average hash
         self._md5_hash = None  # Private attribute to store the MD5 hash
         self._average_hash_size = hash_size
 
@@ -27,10 +29,10 @@ class ImageFile:
         Calculate the hash only if it hasn't been calculated yet.
         """
         if self._average_hash is None:
-            self._average_hash = self.calculate_hash()
+            self._average_hash = self.calculate_average_hash()
         return self._average_hash
 
-    def calculate_hash(self):
+    def calculate_average_hash(self):
         """
         Calculate the hash of the image file.
         """
