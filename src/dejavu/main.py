@@ -2,9 +2,7 @@ from dejavu.file_handlers import ImageFileHandler
 
 if __name__ == "__main__":
 
-    path = "D:\photos"
+    path = "/Users/kasper_janehag/Documents/repos/deja-vu-delete/tests/test_set_1"
     file_handler = ImageFileHandler(path)
-    file_handler.list_files()
-    images = file_handler.files
-    for image in images[0:5]:
+    for image in file_handler.files[0:5]:
         print(image)
