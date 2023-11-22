@@ -7,9 +7,19 @@ class ImageFile:
     """
     def __init__(self, file_path, hash_size=20):
         self.file_path = file_path
-        self._average_hash = None  # Private attribute to store the hash
+        self._md5_hash = None  # Private attribute to store the MD5 hash
         self._average_hash_size = hash_size
 
+    @property
+    def md5_hash(self):
+        """
+        Property to get the hash of the image. 
+        Calculate the hash only if it hasn't been calculated yet.
+        """
+        if self._md5_hash is None:
+            self._md5_hash = self.calculate_average_hash()
+        return self._md5_hash
+    
     @property
     def average_hash(self):
         """
@@ -27,5 +37,12 @@ class ImageFile:
         with Image.open(self.file_path) as img:
             return imagehash.average_hash(img, self._average_hash_size)
 
+    def calculate_md5(self):
+        hash_md5 = hashlib.md5()
+        with open(self.file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                hash_md5.update(chunk)
+        return hash_md5.hexdigest()
+    
     def __repr__(self):
         return f"ImageFile({self.file_path}, Average Hash: {self.average_hash})"
