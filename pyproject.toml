@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dejavu"
+version = "0.1.0"
+description = "A python application for identifying and deleting duplicated or similar pictures on a system"
+authors = [
+    {name="Kasper Janehag", email="kasper.janehag@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 88
+extend-ignore = ["E203", "W503"]
