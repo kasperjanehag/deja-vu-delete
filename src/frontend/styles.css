@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.collapsible > .child-container {
+    transition: max-height 0.2s ease-out;
+    max-height: 500px; /* Or any large value */
+    overflow: hidden;
+}
+
+.collapsible.collapsed > .child-container {
+    max-height: 0;
+}
