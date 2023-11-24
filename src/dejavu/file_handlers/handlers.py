@@ -38,7 +38,7 @@ class ImageFileHandler(FileHandler):
         for ext in self.image_extensions:
             for file_path in self.path.rglob(f'*{ext}'):
                 if file_path.is_file():
-                    yield ImageFile(file_path)
+                    yield ImageFile(self.path,file_path)
 
     @property
     def images(self) -> list[ImageFile]:
@@ -59,7 +59,7 @@ class ImageFileHandler(FileHandler):
         for ext in self.image_extensions:
             for file_path in self.path.rglob(f'*{ext}'):
                 if file_path.is_file():
-                    self._images.append(ImageFile(file_path))
+                    self._images.append(ImageFile(self.path, file_path))
         return self._images
     
     def find_duplicates_by_average_hash(self):
