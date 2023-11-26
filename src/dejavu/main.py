@@ -1,7 +1,7 @@
 from dejavu.file_handlers import ImageFileHandler
 import eel
 
-eel.init('src/frontend')
+eel.init('src/dejavy-frontend/dist/')
 
 @eel.expose
 def find_duplicates_python():
