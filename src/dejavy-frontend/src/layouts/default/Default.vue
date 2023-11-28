@@ -1,30 +1,19 @@
 <template>
-  <v-container fluid>
-    <v-row no-gutters>
-      <SideBarLayout>
-        <!-- Sidebar content goes here -->
-      </SideBarLayout>
-      <MainContainer>
-        <!-- Main content goes here -->
-      </MainContainer>
-    </v-row>
-  </v-container>
+  <v-layout class="rounded rounded-md">
+    <v-app-bar title="Application bar"></v-app-bar>
+    <SideBarLayout />
+    <MainLayout />
+  </v-layout>
 </template>
 
 <script>
 import SideBarLayout from './SideBarLayout.vue'
-import MainContainer from './MainLayout.vue'
+import MainLayout from './MainLayout.vue'
 
 export default {
   components: {
     SideBarLayout,
-    MainContainer
+    MainLayout
   }
 }
 </script>
-
-<style scoped>
-.v-container {
-  background-color: #edf2f7;
-}
-</style>

@@ -22,8 +22,9 @@
   </MainLayout>
 </template>
 
+
 <script setup>
-import MainLayout from './layouts/default/Default.vue'
+import MainLayout from '@/layouts/default/Default.vue'
 import { ref } from 'vue'
 
 const items = ref([
