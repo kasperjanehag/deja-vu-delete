@@ -12,6 +12,7 @@ class ImageFile:
         self.file_path = Path(file_path)
         self.base_path = Path(base_path)
         self.relative_path = self.file_path.relative_to(self.base_path)
+        self.name = self.file_path.name
 
         self._average_hash = None  # Private attribute to store the average hash
         self._md5_hash = None  # Private attribute to store the MD5 hash
