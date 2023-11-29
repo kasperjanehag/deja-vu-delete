@@ -16,13 +16,6 @@
             ></v-list-item>
         </template>
 
-        <!-- <v-list-item
-            v-for="(item, _) in item.children"
-            :key="item.id"
-            :prepend-icon="item.icon"
-            :title="item.name"
-        ></v-list-item> -->
-
         <NestedListItems
             :items="item.children"
         />
